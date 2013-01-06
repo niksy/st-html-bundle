@@ -8,6 +8,15 @@
     <string>text.html</string>
     <key>settings</key>
     <dict>
+        <key>shellVariables</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>TM_XHTML</string>
+                <key>value</key>
+                <string> /</string>
+            </dict>
+        </array>
         <key>decreaseIndentPattern</key>
         <string>(?x)
         ^\s*
