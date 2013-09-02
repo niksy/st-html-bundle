@@ -281,10 +281,6 @@
 							<key>include</key>
 							<string>source.css</string>
 						</dict>
-						<dict>
-							<key>include</key>
-							<string>source.scss</string>
-						</dict>
 					</array>
 				</dict>
 			</array>
