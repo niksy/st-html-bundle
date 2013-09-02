@@ -275,6 +275,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#embedded-escaped-css</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>source.css</string>
 						</dict>
 						<dict>
@@ -372,6 +376,10 @@
 						<dict>
 							<key>include</key>
 							<string>#php</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#embedded-escaped-js</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -556,15 +564,61 @@
 					<key>include</key>
 					<string>#php</string>
 				</dict>
-				<!--
-				<dict>
-					<key>include</key>
-					<string>#smarty</string>
-				</dict>
-				-->
 				<dict>
 					<key>include</key>
 					<string>#python</string>
+				</dict>
+			</array>
+		</dict>
+		<key>embedded-escaped-css</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!--\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\s*--\s*&gt;</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#embedded-code</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>source.css</string>
+				</dict>
+			</array>
+		</dict>
+		<key>embedded-escaped-js</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!\[CDATA\[\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\s*]](?=&gt;)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#embedded-code</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>source.js</string>
 				</dict>
 			</array>
 		</dict>

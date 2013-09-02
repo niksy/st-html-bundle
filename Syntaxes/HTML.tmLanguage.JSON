@@ -234,6 +234,9 @@
                             "include": "#php"
                         },
                         {
+                        	"include": "#embedded-escaped-js"
+                        },
+                        {
                             "include": "source.js"
                         }
                     ]
@@ -401,17 +404,43 @@
     	    "begin": "<!--\\s*",
     	    "captures": {
     	        "0": {
-    	            "name": "punctuation.definition.comment.html"
+    	            "name": "comment.block.html"
     	        }
     	    },
     	    "end": "\\s*--\\s*>",
-    	    "name": "comment.block.html",
+    	    "captures": {
+    	        "0": {
+    	            "name": "comment.block.html"
+    	        }
+    	    },
     	    "patterns": [
     	        {
     	            "include": "#embedded-code"
     	        },
     	        {
     	            "include": "source.css"
+    	        }
+    	    ]
+        },
+        "embedded-escaped-js": {
+    	    "begin": "<!\\[CDATA\\[\\s*",
+    	    "captures": {
+    	        "0": {
+    	            "name": "comment.block.html"
+    	        }
+    	    },
+    	    "end": "\\s*]](?=>)",
+    	    "captures": {
+    	        "0": {
+    	            "name": "comment.block.html"
+    	        }
+    	    },
+    	    "patterns": [
+    	        {
+    	            "include": "#embedded-code"
+    	        },
+    	        {
+    	            "include": "source.js"
     	        }
     	    ]
         },
